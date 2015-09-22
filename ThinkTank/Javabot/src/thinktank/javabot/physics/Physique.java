@@ -8,6 +8,8 @@ import thinktank.javabot.sensors.DetectionLigneDroite;
 
 public class Physique {
 	
+	private Terrain map;
+	
 	public enum type{
 		tank,
 		vide,
@@ -28,8 +30,6 @@ public class Physique {
 	public void AffichageOff() {
 		map.AffichageOff();
 	}
-
-	private Terrain map;
 
 	
 	public Physique(int lignes, int colonnes){
