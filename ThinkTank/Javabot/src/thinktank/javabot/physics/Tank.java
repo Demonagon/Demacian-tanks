@@ -45,6 +45,7 @@ public class Tank extends Mobile {
 		setCoordX(Alea(1, map.tailleX() - 1));
 		setCoordY(Alea(1, map.tailleY() - 1));
 
+		//TODO a enlever ! Implémentation dégleusse - Pacôme
 		while (!map.estLibre(getCoordX(), getCoordY())) {
 			setCoordX(Alea(1, map.tailleX() - 1));
 			setCoordY(Alea(1, map.tailleY() - 1));
@@ -63,6 +64,7 @@ public class Tank extends Mobile {
 		setCoordX(Alea(1, map.tailleX() - 1));
 		setCoordY(Alea(1, map.tailleY() - 1));
 
+		//TODO a enlever ! Implémentation dégleusse - Pacôme
 		while (!map.estLibre(getCoordX(), getCoordY())) {
 			setCoordX(Alea(1, map.tailleX() - 1));
 			setCoordY(Alea(1, map.tailleY() - 1));
