@@ -1,5 +1,8 @@
 package demaciatanks.swinginterface;
 
+import java.awt.Color;
+
+import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -9,7 +12,13 @@ public class FileBoxesListPanel extends JPanel {
 	private static final long serialVersionUID = 7329447505383837662L;
 
 	public FileBoxesListPanel() {
-		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		add(new NewFileButton());
+		add(new NewFileButton());
+		add(new NewFileButton());
+		add(new NewFileButton());
+		add(new NewFileButton());
+		add(new NewFileButton());
 	}
 	
 	public void addFileBox(JComponent box) {

@@ -5,8 +5,6 @@ import java.awt.Dimension;
 
 import javax.swing.JComponent;
 
-import com.sun.prism.Graphics;
-
 public class DummyComponent extends JComponent {
 	
 	private static final long serialVersionUID = -7976741269835734761L;

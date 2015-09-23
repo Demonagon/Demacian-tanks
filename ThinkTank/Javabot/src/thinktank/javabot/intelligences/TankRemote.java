@@ -3,7 +3,6 @@ package thinktank.javabot.intelligences;
 import thinktank.javabot.physics.Physique;
 import thinktank.javabot.physics.Tank;
 import thinktank.javabot.sensors.DetectionLigneDroite;
-import thinktank.javabot.sensors.ResultsDLD;
 
 // TODO: Auto-generated Javadoc
 /**

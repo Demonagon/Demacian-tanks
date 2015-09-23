@@ -6,25 +6,39 @@ import java.awt.HeadlessException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Window extends JFrame {
+public class Window {
 
 	private static final long serialVersionUID = -8179346049381197847L;
 
+	private JFrame frame;
+	
 	public Window() throws HeadlessException {
-		this.setSize(new Dimension(1000, 1000));
-		this.setTitle("Demacian Tanks");
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setVisible(true);
+		frame = new JFrame();
+		frame.setTitle("Demacian Tanks");
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	}
+	
+	public JFrame getFrame() {
+		return frame;
+	}
+	
+	public void setContent(JPanel panel) {
+		getFrame().setContentPane(panel);
+		getFrame().pack();
+		getFrame().setExtendedState(JFrame.MAXIMIZED_BOTH);
+		getFrame().setVisible(true);
 	}
 	
 	public static void main(String args[]) {
 		Window window = new Window();
-		JPanel panel = new FileBoxesListPanel();
-		panel.add(new NewFileButton());
-		panel.add(new NewFileButton());
-		panel.add(new NewFileButton());
-		panel.add(new NewFileButton());
-		panel.add(new NewFileButton());
-		window.setContentPane(panel);
+		/*FileBoxesScrollListPanel panel = new FileBoxesScrollListPanel();
+		panel.getScrollPane().getContent().add(new NewFileButton());
+		panel.getScrollPane().getContent().add(new NewFileButton());
+		panel.getScrollPane().getContent().add(new NewFileButton());
+		panel.getScrollPane().getContent().add(new NewFileButton());
+		panel.getScrollPane().getContent().add(new NewFileButton());
+		panel.getScrollPane().getContent().add(new NewFileButton());*/
+		LeftPanel panel = new LeftPanel();
+		window.setContent(panel);
 	}
 }

@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
-import javax.swing.JProgressBar;
 
 import thinktank.javabot.physics.ObjetTT;
 import thinktank.javabot.physics.Physique;
