@@ -84,7 +84,7 @@ public class MainWindow extends JFrame {
 	
 	/**Graphics
 	 * Fonction main principale
-	 **/
+	 **/ /*
 	public static void main(String args[]) {
 		final MainWindow window = new MainWindow();
 		
@@ -145,6 +145,6 @@ public class MainWindow extends JFrame {
 			
 		}
 		
-	}
+	}*/
 
 }
