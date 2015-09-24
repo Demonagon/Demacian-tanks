@@ -13,12 +13,6 @@ public class FileBoxesListPanel extends JPanel {
 
 	public FileBoxesListPanel() {
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		add(new NewFileButton());
-		add(new NewFileButton());
-		add(new NewFileButton());
-		add(new NewFileButton());
-		add(new NewFileButton());
-		add(new NewFileButton());
 	}
 	
 	public void addFileBox(JComponent box) {
