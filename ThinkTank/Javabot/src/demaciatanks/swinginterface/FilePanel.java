@@ -17,6 +17,8 @@ public class FilePanel extends JPanel {
 		button_panel = new NewButtonPanel();
 		list_panel = new FileBoxesScrollListPanel();
 		
+		this.setMaximumSize(this.getMaximumSize());
+		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		this.add(Box.createRigidArea(new Dimension(0, 10)));
 		this.add(button_panel);

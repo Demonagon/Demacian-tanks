@@ -39,12 +39,15 @@ public class Window {
 		panel.getScrollPane().getContent().add(new NewFileButton());
 		panel.getScrollPane().getContent().add(new NewFileButton());*/
 		//LeftPanel panel = new LeftPanel();
-		ContentPanel panel = new ContentPanel();
+		//ContentPanel panel = new ContentPanel();
 		//BlueSelectionPanel panel = new BlueSelectionPanel();
 		//ColorSelectionPanel panel = new ColorSelectionPanel();
 		//ColorPanel panel = new ColorPanel();
 		//GraphicArenaToolsPanel panel = new GraphicArenaToolsPanel();
 		//GraphicArenaPanel panel = new GraphicArenaPanel();
+		//ScriptEditorToolsPanel panel = new ScriptEditorToolsPanel();
+		//ScriptEditorPanel panel = new ScriptEditorPanel();
+		MainPanel panel = new MainPanel();
 		window.setContent(panel);
 		
 		
