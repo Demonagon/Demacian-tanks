@@ -2,7 +2,6 @@ package thinktank.javabot.physics;
 
 import java.util.ArrayList;
 
-import thinktank.javabot.sensors.DetectionLigneDroite;
 
 
 
