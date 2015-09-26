@@ -6,14 +6,14 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
-public class LeftPanel extends JPanel {
+public class FilePanel extends JPanel {
 	
 	private static final long serialVersionUID = 7745904866479643142L;
 
 	NewButtonPanel button_panel;
 	FileBoxesScrollListPanel list_panel;
 	
-	public LeftPanel() {
+	public FilePanel() {
 		button_panel = new NewButtonPanel();
 		list_panel = new FileBoxesScrollListPanel();
 		

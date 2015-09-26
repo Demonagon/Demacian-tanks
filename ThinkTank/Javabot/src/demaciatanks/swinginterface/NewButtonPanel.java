@@ -16,6 +16,7 @@ public class NewButtonPanel extends JPanel {
 		button = new NewFileButton();
 		this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS ));
 		this.add(Box.createHorizontalGlue());
+		this.add(Box.createRigidArea(new Dimension(10, 0)));
 		this.add(button);
 		this.add(Box.createRigidArea(new Dimension(10, 0)));
 	}
