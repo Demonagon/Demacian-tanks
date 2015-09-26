@@ -15,7 +15,7 @@ public class PanneauDessin extends JPanel {
 
 	private static int tailleCase = 24;
 	Physique physique;
-	ObjetTT contenu;
+	ObjetTT contenu; // Inutile ! à enlever ! - Pacôme
 	SpriteSet sp = new SpriteSet();
 	Sprite mur = new Sprite("ressources/mur.png");
 	Sprite sol = new Sprite("ressources/sol.png");

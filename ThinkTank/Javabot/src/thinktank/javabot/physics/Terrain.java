@@ -295,6 +295,7 @@ public class Terrain {
 	* @param obj  objet à ajouter
  	*/
 	{
+		// TODO il faut vérifier ici si les coordonées de l'objet sont libres... Pas avant !
 		terrain[x][y] = obj;
 	}
 	
