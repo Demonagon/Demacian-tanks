@@ -16,14 +16,14 @@ import java.util.stream.Collectors;
 
 public class FileExplorer {
 
-	static List<File> filesInFolder = null;
-	static String filePath = "C:/Users/julien/Google Drive/SampleName/Scripts";
 	static String fileName = "script3.py";
 	
-	public static List<File> getListFile(String filePath)
+	public static List<File> getListFile(String directoryPath)
 	{
+		List<File> filesInFolder = null;
+		
 		try {
-			filesInFolder = Files.walk(Paths.get(filePath))
+			filesInFolder = Files.walk(Paths.get(directoryPath))
 			        .filter(Files::isRegularFile)
 			        .map(Path::toFile)
 			        .collect(Collectors.toList());
@@ -35,11 +35,11 @@ public class FileExplorer {
 		return filesInFolder;
 	}
 	
-	public static void saveFile(String filePath, String newText)
+	public static void saveFile(String directoryPath, String newText)
 	{
 		try (
 			Writer writer = new BufferedWriter(new OutputStreamWriter(
-				new FileOutputStream(filePath), "utf-8"))) {
+				new FileOutputStream(directoryPath), "utf-8"))) {
 			writer.write(newText);
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
@@ -53,11 +53,11 @@ public class FileExplorer {
 		}
 	}
 	
-	public static void createFile(String filePath, String fileName, String textToWrite)
+	public static void createFile(String directoryPath, String fileName, String textToWrite)
 	{
 		try (
 			Writer writer = new BufferedWriter(new OutputStreamWriter(
-				new FileOutputStream(filePath + "/" + fileName), "utf-8"))) {
+				new FileOutputStream(directoryPath + "/" + fileName), "utf-8"))) {
 			writer.write(textToWrite);
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
@@ -71,21 +71,25 @@ public class FileExplorer {
 		}
 	}
 	
-	public static void main(String[] args) {
-		createFile(filePath, fileName, "Bonjour, je suis un script =D");
-		getListFile(filePath);
+	public static String readFile(String path)
+	{
+		byte[] encoded = null;
+		String fileContent = null;
 		
-		for (File file : filesInFolder) {
-		    if (file.isFile()) {
-		    	System.out.println(file.getPath());
-		    	
-		        try {
-					saveFile(file.getCanonicalPath(), "Bonjour " + file.getPath());
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		    }
+		try {
+			encoded = Files.readAllBytes(Paths.get(path));
+		} catch (IOException e) {
+				// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		
+		try {
+			fileContent = new String(encoded, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return fileContent;
 	}
 }

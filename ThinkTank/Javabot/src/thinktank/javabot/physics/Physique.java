@@ -91,25 +91,25 @@ public class Physique {
 		map.addTank();
 	}
 	
-	public void addTank(String filepath)
+	public void addTank(String directoryPath)
 	/**
-	 * ajoute un tank avec l'ia dans le fichier filepath
-	 * @param filepath  position du fichier
+	 * ajoute un tank avec l'ia dans le fichier directoryPath
+	 * @param directoryPath  position du fichier
 	 */
 	{
-		map.addTank(filepath);
+		map.addTank(directoryPath);
 	}
 	
-	public void addTank(int x, int y, String filepath)
+	public void addTank(int x, int y, String directoryPath)
 	/**
-	 * ajoute un tank avec l'ia dans le fichier filepath à la position(x,y)
+	 * ajoute un tank avec l'ia dans le fichier directoryPath à la position(x,y)
 	 * @param x  coordonée x du tank
 	 * @param y  coordonée y du tank
-	 * @param filepath position du fichier
+	 * @param directoryPath position du fichier
 	 */
 	{
 		if(estLibre(x, y))
-			map.addTank(x,y,filepath,this);
+			map.addTank(x,y,directoryPath,this);
 	}
 	
 	public ArrayList<Projectile> getProjectiles()

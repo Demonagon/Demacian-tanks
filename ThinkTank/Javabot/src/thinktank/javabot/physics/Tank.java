@@ -59,7 +59,7 @@ public class Tank extends Mobile {
 		ia.initialize();
 	}
 	
-	protected Tank(Terrain map, String filepath) {
+	protected Tank(Terrain map, String directoryPath) {
 		setId(newId());
 		setCoordX(Alea(1, map.tailleX() - 1));
 		setCoordY(Alea(1, map.tailleY() - 1));
@@ -74,7 +74,7 @@ public class Tank extends Mobile {
 		setArme(arme);
 		setMap(map);
 		setDirection(new Direction(0, 1));
-		ia = intels.newIntelligence(filepath,this);
+		ia = intels.newIntelligence(directoryPath,this);
 		ia.initialize();
 	}
 
@@ -93,7 +93,7 @@ public class Tank extends Mobile {
 		
 	}
 	
-	protected Tank(int x, int y, Terrain map,String filepath, Physique physique) {
+	protected Tank(int x, int y, Terrain map,String directoryPath, Physique physique) {
 		setId(newId());
 
 		setCoordX(x);
@@ -103,7 +103,7 @@ public class Tank extends Mobile {
 		setArme(arme);
 		setMap(map);
 		setDirection(new Direction(0, 1));
-		ia = intels.newIntelligence(filepath,this);
+		ia = intels.newIntelligence(directoryPath,this);
 		ia.start();
 		sensor = new DetectionLigneDroite(this, physique);
 	}

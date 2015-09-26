@@ -43,13 +43,13 @@ public class Intelligences {
 	
 	/**
 	 * Crée une nouvelle intelligence et l'ajoute à la liste.
-	 * @param filepath Chemin de fichier vers le script (python) de l'IA utilisateur.
+	 * @param directoryPath Chemin de fichier vers le script (python) de l'IA utilisateur.
 	 * @return intelligence
 	 * @deprecated Utilisez {@Link #newIntelligence(String, Tank)} à la place.
 	 */
 	@Deprecated
-	public Intelligence newIntelligence(String filepath){
-		Intelligence ia = new Intelligence(filepath,this);
+	public Intelligence newIntelligence(String directoryPath){
+		Intelligence ia = new Intelligence(directoryPath,this);
 		intelligences.add(ia);
 		return ia;
 	}
@@ -57,12 +57,12 @@ public class Intelligences {
 	/**
 	 * New intelligence.
 	 *
-	 * @param filepath the filepath
+	 * @param directoryPath the directoryPath
 	 * @param tankPhy the tank phy
 	 * @return the intelligence
 	 */
-	public Intelligence newIntelligence(String filepath, Tank tankPhy){
-		Intelligence ia = new Intelligence(filepath,this,tankPhy);
+	public Intelligence newIntelligence(String directoryPath, Tank tankPhy){
+		Intelligence ia = new Intelligence(directoryPath,this,tankPhy);
 		intelligences.add(ia);
 		return ia;
 	}

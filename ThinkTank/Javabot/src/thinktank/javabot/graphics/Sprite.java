@@ -9,9 +9,9 @@ import javax.imageio.ImageIO;
 public class Sprite {
 	Image img;
 	
-	public Sprite(String filepath){
+	public Sprite(String directoryPath){
 		try {
-		    img = ImageIO.read(new File(filepath));
+		    img = ImageIO.read(new File(directoryPath));
 		} catch (IOException e) {
 		}
 	}
