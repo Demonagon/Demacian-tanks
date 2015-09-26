@@ -1,6 +1,5 @@
 package demaciatanks.swinginterface;
 
-import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 
 public class FileBoxesScrollPane extends JScrollPane {

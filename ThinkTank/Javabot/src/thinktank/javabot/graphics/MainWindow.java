@@ -23,8 +23,8 @@ public class MainWindow extends JFrame {
 	private static JLabel labelY = new JLabel("  Y : ");
 	
 	/* Coordonnées saisies par le user */
-	private static int setX;
-	private static int setY;
+	//private static int setX;
+	//private static int setY;
 	
 	private JPanel container = new JPanel();
 	private JPanel c2 = new JPanel();

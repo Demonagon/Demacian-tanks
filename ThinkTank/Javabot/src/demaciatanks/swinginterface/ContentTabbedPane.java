@@ -1,6 +1,5 @@
 package demaciatanks.swinginterface;
 
-import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 
 public class ContentTabbedPane extends JTabbedPane {

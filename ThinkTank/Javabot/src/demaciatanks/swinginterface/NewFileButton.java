@@ -1,7 +1,5 @@
 package demaciatanks.swinginterface;
 
-import java.awt.Dimension;
-
 import javax.swing.JButton;
 
 public class NewFileButton extends JButton {

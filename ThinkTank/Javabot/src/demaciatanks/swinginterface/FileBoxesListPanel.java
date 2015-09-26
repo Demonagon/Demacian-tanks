@@ -1,8 +1,5 @@
 package demaciatanks.swinginterface;
 
-import java.awt.Color;
-
-import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JComponent;
 import javax.swing.JPanel;

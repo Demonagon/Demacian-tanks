@@ -1,8 +1,5 @@
 package demaciatanks.swinginterface;
 
-import java.awt.Dimension;
-import java.awt.geom.Dimension2D;
-
 import javax.swing.JLabel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
