@@ -9,6 +9,7 @@ import java.awt.Graphics2D;
 	public Dtank moving_object;
 	private boolean active;
 	
+	
 	public void setTank ( Dtank moving_object ){      
 		this.moving_object=moving_object;
 	}
@@ -27,6 +28,11 @@ import java.awt.Graphics2D;
 	
 	public void desactivate(){  
 		active=false;
+	}
+	
+	public void setCoordMovingObj(int x, int y){
+		moving_object.setCoordX(x);
+		moving_object.setCoordY(y);
 	}
 
 	

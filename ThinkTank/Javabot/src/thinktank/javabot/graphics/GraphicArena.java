@@ -1,5 +1,7 @@
 package thinktank.javabot.graphics;
 
+
+import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -7,8 +9,10 @@ import java.util.ArrayList;
 
 import javax.swing.JComponent;
 
+import thinktank.javabot.physics.Dtank;
 import thinktank.javabot.physics.ObjetTT;
 import thinktank.javabot.physics.Physique;
+import thinktank.javabot.physics.SmartCursor;
 
 public class GraphicArena extends JComponent{
 
@@ -18,7 +22,7 @@ public class GraphicArena extends JComponent{
 	private static final long serialVersionUID = 1L;
 	
 	private Physique physics;
-	private ObjetTT moving_object;
+	private Dtank moving_object;
 	private SmartCursor cursor;
 	
 	class GraphicArenaMouseListener 
@@ -33,7 +37,7 @@ public class GraphicArena extends JComponent{
 
 		@Override
 		public void mouseEntered(MouseEvent arg0) {
-			if(cursor.isActive){
+			if(cursor.isActive()){
 				addObject(cursor.getTank());
 			}
 			
@@ -41,7 +45,7 @@ public class GraphicArena extends JComponent{
 
 		@Override
 		public void mouseExited(MouseEvent arg0) {
-			if(cursor.isActive){
+			if(cursor.isActive()){
 				removeObject(cursor.getTank());
 			}
 			
@@ -65,23 +69,24 @@ public class GraphicArena extends JComponent{
 		@Override
 		public void mouseMoved(MouseEvent arg0) {
 			if(cursor.isActive()){
-				//change coordonnées du tank de smartcursor
+				cursor.setCoordMovingObj(arg0.getX(), arg0.getY());
 			}
 			
 		}
 		
 	}
 	
-	public GraphicArena(Physique physics, Smartcursor cursor){
+	public GraphicArena(Physique physics, SmartCursor cursor){
 		this.physics = physics;
 		this.cursor = cursor;
+		this.moving_object = cursor.moving_object;
 	}
 	
-	public void addObject(DTank dTank){
-		physics.addTank(dTank.getTank());
+	public void addObject(Dtank dTank){
+		physics.addTank(dTank);
 	}
-	public void removeObject(DTank dTank){
-		physics.removeTank(dTank.getTank());
+	public void removeObject(Dtank dTank){
+		physics.removeTank(dTank);
 	}
 	
 	public void paintComponent(Graphics g){

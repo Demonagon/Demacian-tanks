@@ -88,6 +88,16 @@ public class Terrain {
 		return t;
 	}
 	
+	protected Tank addTank(Tank tank)
+	/**
+ 	* rajoute un tank au Terrain, ainsi qu'a la liste des tanks
+ 	*/
+	{
+		tanks.add(tank);
+		addObjetTT(tank.getCoordX(), tank.getCoordY(), tank);
+		return tank;
+	}
+	
 	protected Tank addTank(String filepath)
 	/**
  	* rajoute un tank au Terrain, ainsi qu'a la liste des tanks
