@@ -89,6 +89,9 @@ public class Physique {
 	{
 		map.addTank();
 	}
+	public void removeTank(Tank tank){
+		map.removeTank(tank);
+	}
 	
 	public void addTank(String filepath)
 	/**
