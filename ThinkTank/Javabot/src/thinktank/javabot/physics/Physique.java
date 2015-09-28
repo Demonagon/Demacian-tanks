@@ -2,7 +2,6 @@ package thinktank.javabot.physics;
 
 import java.util.ArrayList;
 
-import thinktank.javabot.sensors.DetectionLigneDroite;
 
 
 
@@ -89,6 +88,9 @@ public class Physique {
 	 */
 	{
 		map.addTank();
+	}
+	public void removeTank(Tank tank){
+		map.removeTank(tank);
 	}
 	
 	public void addTank(String directoryPath)

@@ -1,12 +1,9 @@
 package thinktank.javabot.graphics;
 
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -26,8 +23,8 @@ public class MainWindow extends JFrame {
 	private static JLabel labelY = new JLabel("  Y : ");
 	
 	/* Coordonnées saisies par le user */
-	private static int setX;
-	private static int setY;
+	//private static int setX;
+	//private static int setY;
 	
 	private JPanel container = new JPanel();
 	private JPanel c2 = new JPanel();
@@ -84,7 +81,7 @@ public class MainWindow extends JFrame {
 	
 	/**Graphics
 	 * Fonction main principale
-	 **/
+	 **/ /*
 	public static void main(String args[]) {
 		final MainWindow window = new MainWindow();
 		
@@ -145,6 +142,6 @@ public class MainWindow extends JFrame {
 			
 		}
 		
-	}
+	}*/
 
 }
