@@ -9,10 +9,6 @@ import java.awt.event.MouseMotionListener;
 
 import javax.swing.JComponent;
 
-
-
-
-
 import thinktank.javabot.physics.DTank;
 import thinktank.javabot.physics.ObjetTT;
 import thinktank.javabot.physics.Physique;
@@ -20,8 +16,12 @@ import thinktank.javabot.physics.SmartCursor;
 import thinktank.javabot.physics.Tank;
 
 public class GraphicArena extends JComponent{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
-	private static final long serialVersionUID = 7631207807087148459L;
 	private Physique physics;
 	private Tank highlightTank;
 	private SmartCursor cursor;
@@ -98,7 +98,6 @@ public class GraphicArena extends JComponent{
 	public void paintHighlight(Graphics g,int x,int y){
 		g.drawImage(imgLoader.getSprite(ImageLoader.SpriteName.HIGHLIGHT.ordinal()), x, y, null);
 	}
-	
 	@Override
 	public void paintComponent(Graphics g){    
 		g.setColor(Color.black);
@@ -118,4 +117,5 @@ public class GraphicArena extends JComponent{
 				}
 			}
 	}
+
 }

@@ -15,8 +15,8 @@ public class Intelligence extends Thread {
 	/** The tank r. */
 	private TankRemote tankR;
 	
-	/** The directoryPath. */
-	private String directoryPath;
+	/** The filepath. */
+	private String filepath;
 	
 	/** The action. */
 	private Action action;
@@ -86,27 +86,27 @@ public class Intelligence extends Thread {
 	
 	/**
 	 *  Constructeur. Demande le chemin du script utilisateur.
-	 *  @param directoryPath			Chemin vers le script utilisateur (python/jython) codant l'IA du tank.
+	 *  @param filepath			Chemin vers le script utilisateur (python/jython) codant l'IA du tank.
 	 *  @param intelligences	Liste d'intélligences.
 	 *  @deprecated Utilisez {@Link #Intelligence(String, Intelligences, Tank)} à la place.
 	 *  */
 	@Deprecated
-	Intelligence(String directoryPath, Intelligences intelligences)
+	Intelligence(String filepath, Intelligences intelligences)
 	{
 		this.tankR = new TankRemote(this,null);
-		this.directoryPath = directoryPath;
+		this.filepath = filepath;
 		this.intelligences = intelligences;
 	}
 	
 	/**
 	 *  Constructeur. Demande le chemin du script utilisateur.
-	 *  @param directoryPath			Chemin vers le script utilisateur (python/jython) codant l'IA du tank.
+	 *  @param filepath			Chemin vers le script utilisateur (python/jython) codant l'IA du tank.
 	 *  @param intelligences	Liste d'intélligences.
 	 *  @param tankPhy			Tank physique, utilisé pour l'accès aux différents capteurs par les scripts d'IA utilisateurs.
 	 *  */
-	Intelligence(String directoryPath, Intelligences intelligences, Tank tankPhy){
+	Intelligence(String filepath, Intelligences intelligences, Tank tankPhy){
 		this.tankR = new TankRemote(this,tankPhy);
-		this.directoryPath = directoryPath;
+		this.filepath = filepath;
 		this.intelligences = intelligences;
 	}
 	
@@ -172,7 +172,7 @@ public class Intelligence extends Thread {
 		interp.set("tank", tankR);
 		setInitialized();
 		tankR.bePrepared();
-		interp.execfile(directoryPath);
+		interp.execfile(filepath);
 		setAction(Action.scriptCompleted);
 		this.noMoreRunning();
 		
