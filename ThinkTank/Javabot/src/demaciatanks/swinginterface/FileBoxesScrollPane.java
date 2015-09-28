@@ -2,20 +2,18 @@ package demaciatanks.swinginterface;
 
 import javax.swing.JScrollPane;
 
-import thinktank.javabot.fileManagement.FileBoxManager;
-
 public class FileBoxesScrollPane extends JScrollPane {
 
 	private static final long serialVersionUID = -5032055368274982092L;
 
-	FileBoxManager content;
+	FileBoxesListPanel content;
 	
 	public FileBoxesScrollPane() {
-		content = new FileBoxManager();
+		content = new FileBoxesListPanel();
 		getViewport().add(content);
 	}
 
-	FileBoxManager getContent() {
+	FileBoxesListPanel getContent() {
 		return content;
 	}
 }

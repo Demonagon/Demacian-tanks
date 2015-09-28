@@ -89,29 +89,34 @@ public class Physique {
 	{
 		map.addTank();
 	}
+	
+	public void addTank(Tank tank){
+		map.addTank(tank);
+	}
+	
 	public void removeTank(Tank tank){
 		map.removeTank(tank);
 	}
 	
-	public void addTank(String directoryPath)
+	public void addTank(String filepath)
 	/**
-	 * ajoute un tank avec l'ia dans le fichier directoryPath
-	 * @param directoryPath  position du fichier
+	 * ajoute un tank avec l'ia dans le fichier filepath
+	 * @param filepath  position du fichier
 	 */
 	{
-		map.addTank(directoryPath);
+		map.addTank(filepath);
 	}
 	
-	public void addTank(int x, int y, String directoryPath)
+	public void addTank(int x, int y, String filepath)
 	/**
-	 * ajoute un tank avec l'ia dans le fichier directoryPath à la position(x,y)
+	 * ajoute un tank avec l'ia dans le fichier filepath à la position(x,y)
 	 * @param x  coordonée x du tank
 	 * @param y  coordonée y du tank
-	 * @param directoryPath position du fichier
+	 * @param filepath position du fichier
 	 */
 	{
 		if(estLibre(x, y))
-			map.addTank(x,y,directoryPath,this);
+			map.addTank(x,y,filepath,this);
 	}
 	
 	public ArrayList<Projectile> getProjectiles()

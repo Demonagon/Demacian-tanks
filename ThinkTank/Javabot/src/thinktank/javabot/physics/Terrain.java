@@ -88,27 +88,37 @@ public class Terrain {
 		return t;
 	}
 	
-	protected Tank addTank(String directoryPath)
+	protected Tank addTank(Tank tank)
 	/**
  	* rajoute un tank au Terrain, ainsi qu'a la liste des tanks
- 	* @param directoryPath chemin vers l'ia
  	*/
 	{
-		Tank t =new Tank(this,directoryPath);
+		tanks.add(tank);
+		addObjetTT(tank.getCoordX(), tank.getCoordY(), tank);
+		return tank;
+	}
+	
+	protected Tank addTank(String filepath)
+	/**
+ 	* rajoute un tank au Terrain, ainsi qu'a la liste des tanks
+ 	* @param filepath chemin vers l'ia
+ 	*/
+	{
+		Tank t =new Tank(this,filepath);
 		tanks.add(t);
 		addObjetTT(t.getCoordX(), t.getCoordY(), t);
 		return t;
 	}
 	
-	protected Tank addTank(int x, int y ,String directoryPath, Physique physique)
+	protected Tank addTank(int x, int y ,String filepath, Physique physique)
 	/**
  	* rajoute un tank au Terrain, ainsi qu'a la liste des tanks
- 	* @param directoryPath chemin vers l'ia
+ 	* @param filepath chemin vers l'ia
  	* @param x  absyss
  	* @param y  ordonnée
  	*/
 	{
-		Tank t =new Tank(x,y,this,directoryPath,physique);
+		Tank t =new Tank(x,y,this,filepath,physique);
 		tanks.add(t);
 		addObjetTT(t.getCoordX(), t.getCoordY(), t);
 		return t;

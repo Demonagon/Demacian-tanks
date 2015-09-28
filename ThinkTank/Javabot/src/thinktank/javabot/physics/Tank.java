@@ -1,5 +1,6 @@
 package thinktank.javabot.physics;
 
+import java.awt.Graphics;
 import java.util.Random;
 
 import thinktank.javabot.intelligences.Action;
@@ -15,10 +16,14 @@ public class Tank extends Mobile {
 	private Intelligence ia;
 	private static Intelligences intels = new Intelligences();
 	private Sensors sensor;
-	
+	private String filepath;
 
 	public Sensors getSensor() {
 		return sensor;
+	}
+	
+	public String getScript(){
+		return filepath;
 	}
 
 	public void setSensor(Sensors sensor) {
@@ -59,7 +64,7 @@ public class Tank extends Mobile {
 		ia.initialize();
 	}
 	
-	protected Tank(Terrain map, String directoryPath) {
+	protected Tank(Terrain map, String filepath) {
 		setId(newId());
 		setCoordX(Alea(1, map.tailleX() - 1));
 		setCoordY(Alea(1, map.tailleY() - 1));
@@ -74,8 +79,9 @@ public class Tank extends Mobile {
 		setArme(arme);
 		setMap(map);
 		setDirection(new Direction(0, 1));
-		ia = intels.newIntelligence(directoryPath,this);
+		ia = intels.newIntelligence(filepath,this);
 		ia.initialize();
+		this.filepath = filepath;
 	}
 
 	protected Tank(int x, int y, Terrain map) {
@@ -93,7 +99,7 @@ public class Tank extends Mobile {
 		
 	}
 	
-	protected Tank(int x, int y, Terrain map,String directoryPath, Physique physique) {
+	protected Tank(int x, int y, Terrain map,String filepath, Physique physique) {
 		setId(newId());
 
 		setCoordX(x);
@@ -103,7 +109,7 @@ public class Tank extends Mobile {
 		setArme(arme);
 		setMap(map);
 		setDirection(new Direction(0, 1));
-		ia = intels.newIntelligence(directoryPath,this);
+		ia = intels.newIntelligence(filepath,this);
 		ia.start();
 		sensor = new DetectionLigneDroite(this, physique);
 	}
@@ -277,6 +283,12 @@ public class Tank extends Mobile {
 				System.out.println("id: "+getId()+" act: "+act);
 		}
 		action(act);
+	}
+
+	@Override
+	public void paint(Graphics g, int x, int y) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
