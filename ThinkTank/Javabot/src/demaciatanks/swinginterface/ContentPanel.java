@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 
 import javax.swing.JPanel;
 
+import thinktank.javabot.physics.SmartCursor;
+
 
 public class ContentPanel extends JPanel {
 	
@@ -11,8 +13,8 @@ public class ContentPanel extends JPanel {
 
 	ContentTabbedPane tabbed_pane;
 	
-	public ContentPanel() {
-		tabbed_pane = new ContentTabbedPane();
+	public ContentPanel(SmartCursor cursor) {
+		tabbed_pane = new ContentTabbedPane(cursor);
 		this.setLayout(new BorderLayout());
 		this.add(tabbed_pane, BorderLayout.CENTER);
 	}

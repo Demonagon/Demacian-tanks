@@ -8,6 +8,8 @@ import java.util.ArrayList;
 public class Physique {
 	
 	private Terrain map;
+	private int lignes = 42;
+	private int colonnes = 24;
 	
 	public enum type{
 		tank,
@@ -16,7 +18,13 @@ public class Physique {
 		mur
 	}
 	
-
+	public int getLignes(){
+		return lignes;
+	}
+	
+	public int getColonnes(){
+		return colonnes;
+	}
 	
 	public boolean isAffichageOn() {
 		return map.isAffichageOn();
@@ -31,7 +39,7 @@ public class Physique {
 	}
 
 	
-	public Physique(int lignes, int colonnes){
+	public Physique(){
 		map = new Terrain(lignes, colonnes);
 	}
 	public Terrain getMap(){

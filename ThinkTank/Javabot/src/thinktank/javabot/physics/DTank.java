@@ -57,21 +57,17 @@ public class DTank extends Tank {
 		return script_path;
 	}
 	public int getEnumDirection(){
-		if(this.getDirection().getDx() == 1){
+		if(this.getDirection().getDx() == 1)
 			return Orientation.TANKD.ordinal();
-		}
-		if(this.getDirection().getDx() == -1){
+		if(this.getDirection().getDx() == -1)
 			return Orientation.TANKG.ordinal();
-		}
-		if(this.getDirection().getDy() == 1){
+		if(this.getDirection().getDy() == 1)
 			return Orientation.TANKH.ordinal();
-		}
-		if(this.getDirection().getDy() == -1){
+		else
 			return Orientation.TANKB.ordinal();
-		}
-		return -1;
 	}
 	public void paint(Graphics g, int x, int y){
+		System.out.println("babhfuhbgshj");
 		g.drawImage(sprite[getEnumDirection()], x, y, null);
 	}
 }

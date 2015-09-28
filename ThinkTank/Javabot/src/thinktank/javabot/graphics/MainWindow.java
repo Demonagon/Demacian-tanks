@@ -37,9 +37,8 @@ public class MainWindow extends JFrame {
 	 **/
 	public MainWindow() {
 		
-		int lx = 42;
-		int ly = 24;
-		phy = new Physique(lx, ly);
+		
+		phy = new Physique();
 		game = new PanneauDessin(phy);
 		
 		this.setTitle("JavaBot");
