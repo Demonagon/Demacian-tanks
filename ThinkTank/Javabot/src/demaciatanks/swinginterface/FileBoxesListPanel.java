@@ -4,6 +4,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
+@Deprecated
 public class FileBoxesListPanel extends JPanel {
 
 	private static final long serialVersionUID = 7329447505383837662L;
