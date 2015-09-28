@@ -15,11 +15,11 @@ public class GraphicArena extends JComponent{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	/*private static final long serialVersionUID = 1L;
 	
 	private Physique physics;
 	private ObjetTT moving_object;
-	private SmartCursor cursor;
+	//private SmartCursor cursor;
 	
 	class GraphicArenaMouseListener 
 		implements MouseListener, MouseMotionListener{
@@ -86,6 +86,6 @@ public class GraphicArena extends JComponent{
 	
 	public void paintComponent(Graphics g){
 		
-	}
+	}*/
 
 }
