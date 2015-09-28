@@ -1,5 +1,6 @@
 package thinktank.javabot.physics;
 
+import java.awt.Graphics;
 import java.util.Random;
 
 import thinktank.javabot.intelligences.Action;
@@ -15,10 +16,14 @@ public class Tank extends Mobile {
 	private Intelligence ia;
 	private static Intelligences intels = new Intelligences();
 	private Sensors sensor;
-	
+	private String filepath;
 
 	public Sensors getSensor() {
 		return sensor;
+	}
+	
+	public String getScript(){
+		return filepath;
 	}
 
 	public void setSensor(Sensors sensor) {
@@ -76,6 +81,7 @@ public class Tank extends Mobile {
 		setDirection(new Direction(0, 1));
 		ia = intels.newIntelligence(filepath,this);
 		ia.initialize();
+		this.filepath = filepath;
 	}
 
 	protected Tank(int x, int y, Terrain map) {
@@ -277,6 +283,12 @@ public class Tank extends Mobile {
 				System.out.println("id: "+getId()+" act: "+act);
 		}
 		action(act);
+	}
+
+	@Override
+	public void paint(Graphics g, int x, int y) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

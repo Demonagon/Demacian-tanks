@@ -6,15 +6,15 @@ import java.awt.Graphics2D;
 
 	public class SmartCursor {
 	
-	public Dtank moving_object;
+	public DTank moving_object;
 	private boolean active;
 	
 	
-	public void setTank ( Dtank moving_object ){      
+	public void setTank ( DTank moving_object ){      
 		this.moving_object=moving_object;
 	}
 	
-	public Dtank getTank(){  
+	public DTank getTank(){  
 	    return moving_object;
 	}
 	
