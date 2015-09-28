@@ -11,9 +11,9 @@ public class FileBox extends JButton {
 	private File file; // NE GARDER QUE LE PATH
 	
 	public FileBox(File file)
-	{
+	{		
 		this.setFile(file);
-		this.setName(file.getName());
+		this.setText(file.getName());
 	}
 
 	public File getFile() {
