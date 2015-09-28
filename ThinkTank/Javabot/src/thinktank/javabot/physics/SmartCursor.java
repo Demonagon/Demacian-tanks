@@ -12,9 +12,12 @@ import java.awt.Graphics2D;
 	
 	public void setTank ( DTank moving_object ){      
 		this.moving_object=moving_object;
+		activate();
+		System.out.println(this + " set " + moving_object);
 	}
 	
 	public DTank getTank(){  
+		System.out.println(this + " get " + moving_object);
 	    return moving_object;
 	}
 	
@@ -34,12 +37,12 @@ import java.awt.Graphics2D;
 		moving_object.setCoordX(x);
 		moving_object.setCoordY(y);
 	}
-
 	
-	public void paint (Graphics2D g){
-		Graphics2D g2 =  g;
+	public void paint (Graphics2D g, int x, int y){
+		Graphics2D g2 = g;
 		Composite comp = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, (float) 0.5);
 		g2.setComposite(comp);
+		moving_object.paint(g2, x, y);
 	}
 }
 

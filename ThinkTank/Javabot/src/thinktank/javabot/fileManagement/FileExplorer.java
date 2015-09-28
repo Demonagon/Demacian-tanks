@@ -4,15 +4,15 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class FileExplorer {
 
@@ -21,26 +21,30 @@ public class FileExplorer {
 	
 	public static List<File> getListFile(String directoryPath)
 	{
-		List<File> filesInFolder = null;
+		List<File> files = null;
 		
-		try {
-			filesInFolder = Files.walk(Paths.get(directoryPath))
-			       .filter(Files::isRegularFile)
-			       .map(Path::toFile)
-			       .collect(Collectors.toList());
-		} catch (IOException e) { // ICI SELECTIONE FICHIER PYTHON UNIQUEMENT
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		File dir = new File(directoryPath);
+	    File[] filesInFolder = dir.listFiles(new FilenameFilter() {
+	        public boolean accept(File dir, String name) {
+	            return name.toLowerCase().endsWith(fileExtension);
+	        }
+	    });
 		
-		return filesInFolder;
+		/*filesInFolder = Files.walk(Paths.get(directoryPath))
+		       .filter(Files::isRegularFile)
+		       .map(Path::toFile)
+		       .collect(Collectors.toList());*/
+	    
+	    files = Arrays.asList(filesInFolder);
+		
+		return files;
 	}
 	
-	public static void saveFile(String directoryPath, String newText)
+	public static void saveFile(String filePath, String newText)
 	{
 		try (
 			Writer writer = new BufferedWriter(new OutputStreamWriter(
-				new FileOutputStream(directoryPath), "utf-8"))) {
+				new FileOutputStream(filePath), "utf-8"))) {
 			writer.write(newText);
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block

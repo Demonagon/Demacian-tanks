@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
 import thinktank.javabot.physics.SmartCursor;
+import demaciatanks.scripteditor.ScriptEditor;
 
 
 public class ContentPanel extends JPanel {
@@ -13,8 +14,8 @@ public class ContentPanel extends JPanel {
 
 	ContentTabbedPane tabbed_pane;
 	
-	public ContentPanel(SmartCursor cursor) {
-		tabbed_pane = new ContentTabbedPane(cursor);
+	public ContentPanel(SmartCursor cursor, ScriptEditor editor) {
+		tabbed_pane = new ContentTabbedPane(cursor, editor);
 		this.setLayout(new BorderLayout());
 		this.add(tabbed_pane, BorderLayout.CENTER);
 	}

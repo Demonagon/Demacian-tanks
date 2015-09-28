@@ -2,7 +2,10 @@ package demaciatanks.swinginterface;
 
 import javax.swing.JScrollPane;
 
+import demaciatanks.scripteditor.ScriptEditor;
 import thinktank.javabot.fileManagement.FileBoxManager;
+import thinktank.javabot.graphics.ImageLoader;
+import thinktank.javabot.physics.SmartCursor;
 
 public class FileBoxesScrollPane extends JScrollPane {
 
@@ -10,8 +13,8 @@ public class FileBoxesScrollPane extends JScrollPane {
 
 	FileBoxManager content;
 	
-	public FileBoxesScrollPane() {
-		content = new FileBoxManager();
+	public FileBoxesScrollPane(ImageLoader img, SmartCursor cursor, ScriptEditor editor) {
+		content = new FileBoxManager(img, cursor, editor);
 		getViewport().add(content);
 	}
 

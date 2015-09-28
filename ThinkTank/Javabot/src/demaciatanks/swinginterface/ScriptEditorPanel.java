@@ -15,9 +15,10 @@ public class ScriptEditorPanel extends JPanel {
 	ScriptEditor editor;
 	ScriptEditorToolsPanel tools_panel;
 	
-	public ScriptEditorPanel() {
-		editor = new ScriptEditor();
-		tools_panel = new ScriptEditorToolsPanel();
+	public ScriptEditorPanel(ScriptEditor editor, ContentTabbedPane super_pane) {
+		this.editor = editor;
+		editor.setSuper(super_pane);
+		tools_panel = new ScriptEditorToolsPanel(editor);
 		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
