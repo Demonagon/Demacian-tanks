@@ -89,6 +89,11 @@ public class Physique {
 	{
 		map.addTank();
 	}
+	
+	public void addTank(Tank tank){
+		map.addTank(tank);
+	}
+	
 	public void removeTank(Tank tank){
 		map.removeTank(tank);
 	}
