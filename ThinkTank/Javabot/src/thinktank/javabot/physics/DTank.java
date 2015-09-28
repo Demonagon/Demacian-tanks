@@ -12,6 +12,7 @@ public class DTank extends Tank {
 	private Color color;
 	private String script_path;
 	private Image sprite[] = new Image[4];
+	private Image background_sprite;
 	
 	public enum Orientation{
 		TANKH,
@@ -47,6 +48,7 @@ public class DTank extends Tank {
 		sprite[Orientation.TANKB.ordinal()] = img.getSprite(ImageLoader.SpriteName.TANKB.ordinal());
 		sprite[Orientation.TANKD.ordinal()] = img.getSprite(ImageLoader.SpriteName.TANKD.ordinal());
 		sprite[Orientation.TANKG.ordinal()] = img.getSprite(ImageLoader.SpriteName.TANKG.ordinal());
+		background_sprite = img.getSprite(ImageLoader.SpriteName.SOL.ordinal());
 	}
 	
 	public Color getColor() {
@@ -66,8 +68,10 @@ public class DTank extends Tank {
 		else
 			return Orientation.TANKB.ordinal();
 	}
+	
 	public void paint(Graphics g, int x, int y){
-		System.out.println("babhfuhbgshj");
+
+		g.drawImage(background_sprite, x, y, null);
 		g.drawImage(sprite[getEnumDirection()], x, y, null);
 	}
 }

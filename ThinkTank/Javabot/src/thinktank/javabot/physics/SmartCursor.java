@@ -13,11 +13,9 @@ import java.awt.Graphics2D;
 	public void setTank ( DTank moving_object ){      
 		this.moving_object=moving_object;
 		activate();
-		System.out.println(this + " set " + moving_object);
 	}
 	
-	public DTank getTank(){  
-		System.out.println(this + " get " + moving_object);
+	public DTank getTank(){
 	    return moving_object;
 	}
 	
