@@ -20,7 +20,7 @@ public class GraphicArena extends JComponent{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 46483486L;
 	
 	private Physique physics;
 	private Tank highlightTank;
