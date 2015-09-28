@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 public class FileBoxManager extends JPanel {
 
 	private static final long serialVersionUID = -4841135013487590132L;
-	static String directoryPath = "C:/Users/julien/Google Drive/SampleName/Scripts";
+	static String directoryPath = "scripts";
 	//List<FileBox> fileBoxList = new ArrayList<FileBox>();
 	
 	public FileBoxManager() {
