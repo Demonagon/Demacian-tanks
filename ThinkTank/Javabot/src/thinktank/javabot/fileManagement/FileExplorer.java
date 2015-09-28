@@ -19,9 +19,9 @@ public class FileExplorer {
 	static String fileName = "script3.py";
 	static String fileExtension = ".py";
 	
-	public static List<Object> getListFile(String directoryPath)
+	public static List<File> getListFile(String directoryPath)
 	{
-		List<Object> filesInFolder = null;
+		List<File> filesInFolder = null;
 		
 		try {
 			filesInFolder = Files.walk(Paths.get(directoryPath))

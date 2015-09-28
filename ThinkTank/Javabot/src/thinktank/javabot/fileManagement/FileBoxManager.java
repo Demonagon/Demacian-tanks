@@ -14,11 +14,11 @@ public class FileBoxManager extends JPanel {
 	
 	public FileBoxManager() {
 		
-		List<Object> filesInFolder = FileExplorer.getListFile(directoryPath);
+		List<File> filesInFolder = FileExplorer.getListFile(directoryPath);
 		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
-		for(Object file : filesInFolder) {
+		for(File file : filesInFolder) {
 		   
 	   	this.add(new FileBox((File)file));
 		}
