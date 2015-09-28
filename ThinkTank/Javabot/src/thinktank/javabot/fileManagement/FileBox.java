@@ -1,31 +1,27 @@
 package thinktank.javabot.fileManagement;
 
+import java.io.File;
 
-public class FileBox {
+import javax.swing.JButton;
 
-	private String fileContent = null;
-	private String name = null;
+
+public class FileBox extends JButton {
+
+	private static final long serialVersionUID = -971009625896928830L;
+	private File file; // NE GARDER QUE LE PATH
 	
-	public FileBox(String name, String fileContent)
+	public FileBox(File file)
 	{
-		this.setFileContent(fileContent);
-		this.setName(name);
+		this.setFile(file);
+		this.setName(file.getName());
 	}
 
-	public String getFileContent() {
-		return fileContent;
+	public File getFile() {
+		return file;
 	}
 
-	public void setFileContent(String fileContent) {
-		this.fileContent = fileContent;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setFile(File file) {
+		this.file = file;
 	}
 	
 }

@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 public class FileExplorer {
 
 	static String fileName = "script3.py";
+	static String fileExtension = ".py";
 	
 	public static List<File> getListFile(String directoryPath)
 	{
@@ -27,7 +28,7 @@ public class FileExplorer {
 			        .filter(Files::isRegularFile)
 			        .map(Path::toFile)
 			        .collect(Collectors.toList());
-		} catch (IOException e) {
+		} catch (IOException e) { // ICI SELECTIONE FICHIER PYTHON UNIQUEMENT
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
