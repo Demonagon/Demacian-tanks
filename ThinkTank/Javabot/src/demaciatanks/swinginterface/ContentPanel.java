@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 
 import javax.swing.JPanel;
 
+import demaciatanks.scripteditor.ScriptEditor;
+
 
 public class ContentPanel extends JPanel {
 	
@@ -11,8 +13,8 @@ public class ContentPanel extends JPanel {
 
 	ContentTabbedPane tabbed_pane;
 	
-	public ContentPanel() {
-		tabbed_pane = new ContentTabbedPane();
+	public ContentPanel(ScriptEditor editor) {
+		tabbed_pane = new ContentTabbedPane(editor);
 		this.setLayout(new BorderLayout());
 		this.add(tabbed_pane, BorderLayout.CENTER);
 	}

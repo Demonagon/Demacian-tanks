@@ -65,6 +65,8 @@ public class Tank extends Mobile {
 	}
 	
 	protected Tank(Terrain map, String filepath) {
+		if(map == null ) return;
+		
 		setId(newId());
 		setCoordX(Alea(1, map.tailleX() - 1));
 		setCoordY(Alea(1, map.tailleY() - 1));

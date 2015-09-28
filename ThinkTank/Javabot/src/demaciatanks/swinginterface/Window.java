@@ -30,7 +30,5 @@ public class Window {
 		Window window = new Window();
 		MainPanel panel = new MainPanel();
 		window.setContent(panel);
-		
-		
 	}
 }
