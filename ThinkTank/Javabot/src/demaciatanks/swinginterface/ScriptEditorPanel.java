@@ -23,7 +23,6 @@ public class ScriptEditorPanel extends JPanel {
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		this.add(editor);
-		//this.add(temp_editor);
 		this.add(Box.createRigidArea(new Dimension(0, 5)));
 		this.add(tools_panel);
 		this.add(Box.createRigidArea(new Dimension(0, 5)));

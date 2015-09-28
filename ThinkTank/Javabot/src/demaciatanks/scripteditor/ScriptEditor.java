@@ -1,5 +1,7 @@
 package demaciatanks.scripteditor;
 
+import java.io.File;
+
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.SyntaxConstants;
 
@@ -7,22 +9,22 @@ public class ScriptEditor extends RSyntaxTextArea {
 
 	private static final long serialVersionUID = -3906130901413802324L;
 	
-	String text_path;
+	File editing_file;
 
 	public ScriptEditor() {
 	      setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_PYTHON);
 	      setCodeFoldingEnabled(true);
-	      text_path = null;
+	      editing_file = null;
 	}
 	
-	public void openPath(String path) {
-		text_path = path;
+	public void openFile(File file) {
+		editing_file = file;
 		//String content = FileExplorer.open(path);
 		//setText(content);
 	}
 	
-	public String getPath() {
-		return text_path;
+	public File getFile() {
+		return editing_file;
 	}
 
 }
