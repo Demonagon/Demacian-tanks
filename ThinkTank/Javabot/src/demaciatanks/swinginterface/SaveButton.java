@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import thinktank.javabot.fileManagement.FileExplorer;
 import demaciatanks.scripteditor.ScriptEditor;
 
 public class SaveButton extends JButton {
@@ -21,7 +22,9 @@ public class SaveButton extends JButton {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			//FileExplorer.save(editor.getPath(), editor.getText());
+			if(editor.getPath() == null) return;
+			
+			FileExplorer.saveFile(editor.getPath(), editor.getText());
 		}
 	}
 	
