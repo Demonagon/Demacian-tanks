@@ -20,5 +20,9 @@ public class NewButtonPanel extends JPanel {
 		this.add(button);
 		this.add(Box.createRigidArea(new Dimension(10, 0)));
 	}
+	
+	public NewFileButton getButton() {
+		return button;
+	}
 
 }

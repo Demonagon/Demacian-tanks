@@ -12,6 +12,7 @@ public class Projectile extends Mobile{
 	private int vitesseProjectile = 0; // nombre d'iter a attendre avant d'avancer
 	private static int idMort = -1;
 	private Image sprite;
+	private Image background_sprite;
 	
 	
 	protected static int getIdMort() {
@@ -34,6 +35,7 @@ public class Projectile extends Mobile{
 		setCoordY(y);
 		setDirection(direction);
 		sprite = GraphicArena.imgLoader.getSprite(ImageLoader.SpriteName.MISSILE.ordinal());
+		background_sprite = GraphicArena.imgLoader.getSprite(ImageLoader.SpriteName.SOL.ordinal());
 	}
 	
 	protected Projectile(int x, int y, Direction direction, Terrain map, int dmg, int vitesse)
@@ -93,6 +95,7 @@ public class Projectile extends Mobile{
 
 	@Override
 	public void paint(Graphics g, int x, int y) {
+		g.drawImage(background_sprite, x, y, null);
 		g.drawImage(sprite, x, y, null);
 		
 	}

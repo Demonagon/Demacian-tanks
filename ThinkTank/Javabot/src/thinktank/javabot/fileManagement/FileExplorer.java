@@ -58,11 +58,11 @@ public class FileExplorer {
 		}
 	}
 	
-	public static void createFile(String directoryPath, String fileName, String textToWrite)
+	public static void createFile(String filePath, String textToWrite)
 	{
 		try (
 			Writer writer = new BufferedWriter(new OutputStreamWriter(
-				new FileOutputStream(directoryPath + "/" + fileName), "utf-8"))) {
+				new FileOutputStream(filePath), "utf-8"))) {
 			writer.write(textToWrite);
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
@@ -74,6 +74,11 @@ public class FileExplorer {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public static void createFile(String directoryPath, String fileName, String textToWrite)
+	{
+		createFile(directoryPath + "/" + fileName, textToWrite);
 	}
 	
 	public static String readFile(String path)

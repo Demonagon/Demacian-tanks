@@ -63,7 +63,7 @@ public class DTank extends Tank {
 			return Orientation.TANKD.ordinal();
 		if(this.getDirection().getDx() == -1)
 			return Orientation.TANKG.ordinal();
-		if(this.getDirection().getDy() == 1)
+		if(this.getDirection().getDy() == -1)
 			return Orientation.TANKH.ordinal();
 		else
 			return Orientation.TANKB.ordinal();

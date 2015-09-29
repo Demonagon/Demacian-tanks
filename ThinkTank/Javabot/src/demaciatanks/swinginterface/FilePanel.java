@@ -19,7 +19,7 @@ public class FilePanel extends JPanel {
 	
 	public FilePanel(ImageLoader img, SmartCursor cursor, ScriptEditor editor) {
 		button_panel = new NewButtonPanel();
-		list_panel = new FileBoxesScrollListPanel(img, cursor, editor);
+		list_panel = new FileBoxesScrollListPanel(img, cursor, editor, button_panel.getButton());
 		
 		this.setMaximumSize(this.getMaximumSize());
 		

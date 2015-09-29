@@ -13,8 +13,8 @@ public class FileBoxesScrollPane extends JScrollPane {
 
 	FileBoxManager content;
 	
-	public FileBoxesScrollPane(ImageLoader img, SmartCursor cursor, ScriptEditor editor) {
-		content = new FileBoxManager(img, cursor, editor);
+	public FileBoxesScrollPane(ImageLoader img, SmartCursor cursor, ScriptEditor editor, NewFileButton button) {
+		content = new FileBoxManager(img, cursor, editor, button, this);
 		getViewport().add(content);
 	}
 

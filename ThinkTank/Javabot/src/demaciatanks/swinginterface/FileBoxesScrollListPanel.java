@@ -14,9 +14,9 @@ public class FileBoxesScrollListPanel extends JPanel {
 
 	private FileBoxesScrollPane scroll_pane;
 	
-	public FileBoxesScrollListPanel(ImageLoader img, SmartCursor cursor, ScriptEditor editor) {
+	public FileBoxesScrollListPanel(ImageLoader img, SmartCursor cursor, ScriptEditor editor, NewFileButton button) {
 		this.setLayout(new BorderLayout());
-		scroll_pane = new FileBoxesScrollPane(img, cursor, editor);
+		scroll_pane = new FileBoxesScrollPane(img, cursor, editor, button);
 		this.add(scroll_pane);
 	}
 	
