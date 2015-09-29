@@ -48,7 +48,7 @@ public class Terrain {
 		return terrain;
 	}
 	
-	protected ObjetTT detail (int x, int y)
+	public ObjetTT detail (int x, int y)
 	/**
  	* renvoie l'objet sur la case de coordonnée (x,y)
 	* @param x  absyss
@@ -93,7 +93,9 @@ public class Terrain {
  	* rajoute un tank au Terrain, ainsi qu'a la liste des tanks
  	*/
 	{
+		if( ! estLibre(tank.getCoordX(), tank.getCoordY() ) ) return null;
 		tanks.add(tank);
+		tank.setMap(this);
 		addObjetTT(tank.getCoordX(), tank.getCoordY(), tank);
 		return tank;
 	}
@@ -196,7 +198,7 @@ public class Terrain {
 	}
 
 
-	protected boolean estLibre(int x, int y)
+	public boolean estLibre(int x, int y)
 	/**
  	* renvoie true si la case(x,y) contient un Vide, sinon renvoie false
 	* @param x   absyss
@@ -229,7 +231,7 @@ public class Terrain {
 	* @param y  ordonnée
  	*/
 	{
-		if(x <= terrain.length && y <= terrain[x].length){
+		if(x < terrain.length && y < terrain[x].length){
 			if(terrain[x][y] == Mur.getMur())
 				return Physique.type.mur;
 			if(terrain[x][y] == Vide.getVide())
@@ -240,7 +242,7 @@ public class Terrain {
 			return Physique.type.mur;
 	}
 
-	protected boolean TestAndSetCase(Mobile mob,int newX, int newY)
+	public boolean TestAndSetCase(Mobile mob,int newX, int newY)
 	{
 		
 		int x = mob.getCoordX();
@@ -287,7 +289,7 @@ public class Terrain {
 		return false;
 	}
 
-	protected void erase(int x, int y)
+	public void erase(int x, int y)
 	/**
  	* enleve du Terrain l'objet en (x,y)
 	* @param x  absyss

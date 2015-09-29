@@ -17,9 +17,10 @@ public class GraphicArenaPanel extends JPanel {
 	
 	GraphicArenaToolsPanel tools_panel;
 	
-	public GraphicArenaPanel(SmartCursor cursor) {
-		arena = new GraphicArena(cursor);
-		tools_panel = new GraphicArenaToolsPanel();
+	public GraphicArenaPanel(MainPanel panel, SmartCursor cursor) {
+		arena = new GraphicArena(panel, cursor);
+		tools_panel = new GraphicArenaToolsPanel(arena);
+		arena.setStartButton(tools_panel.button);
 		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		

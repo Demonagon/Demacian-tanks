@@ -14,8 +14,8 @@ public class ContentPanel extends JPanel {
 
 	ContentTabbedPane tabbed_pane;
 	
-	public ContentPanel(SmartCursor cursor, ScriptEditor editor) {
-		tabbed_pane = new ContentTabbedPane(cursor, editor);
+	public ContentPanel(MainPanel panel, SmartCursor cursor, ScriptEditor editor) {
+		tabbed_pane = new ContentTabbedPane(panel, cursor, editor);
 		this.setLayout(new BorderLayout());
 		this.add(tabbed_pane, BorderLayout.CENTER);
 	}

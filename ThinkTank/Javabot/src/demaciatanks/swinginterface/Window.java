@@ -12,7 +12,7 @@ public class Window {
 	public Window() throws HeadlessException {
 		frame = new JFrame();
 		frame.setTitle("Demacian Tanks");
-		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 	public JFrame getFrame() {

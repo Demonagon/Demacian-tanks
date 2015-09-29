@@ -30,14 +30,14 @@ public class DTank extends Tank {
 	}
 	
 	public DTank (Terrain map, Color color, String script_path,  ImageLoader img ){
-		super(map);
+		super(map, script_path);
 		this.color= color;
 		this.script_path=script_path;
 		loadSprite(img);
 	}
 	
-	public DTank (int x, int y, Terrain map, Color color, String script_path,  ImageLoader img ){
-		super(x,y,map);
+	public DTank (int x, int y, Terrain map, Color color, String script_path,  ImageLoader img, Physique physique){
+		super(x, y, map, script_path, physique);
 		this.color= color;
 		this.script_path=script_path;
 		loadSprite(img);

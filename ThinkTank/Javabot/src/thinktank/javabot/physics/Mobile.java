@@ -93,7 +93,7 @@ public abstract class Mobile implements ObjetTT{
 		return coordX;
 	}
 
-	protected void setCoordX(int coordX) 
+	public void setCoordX(int coordX) 
 	/**
  	* met à jours la coordonnée en absyss
 	* @param coordX nouvelle coordonnée en absyss
@@ -110,7 +110,7 @@ public abstract class Mobile implements ObjetTT{
 		return coordY;
 	}
 
-	protected void setCoordY(int coordy)
+	public void setCoordY(int coordy)
 	/**
  	* met à jours la coordonnée en absyss
 	* @param coordY nouvelle coordonnée en ordonnée

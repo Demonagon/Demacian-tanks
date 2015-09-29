@@ -33,7 +33,7 @@ public class MainPanel extends JPanel {
 		cursor = new SmartCursor();
 		editor = new ScriptEditor(cursor);
 		file_panel = new FilePanel(image_loader, cursor, editor);
-		content_panel = new ContentPanel(cursor, editor);
+		content_panel = new ContentPanel(this, cursor, editor);
 		//cursor_x = 0;
 		//cursor_y = 0;
 		
