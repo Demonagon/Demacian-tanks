@@ -44,6 +44,7 @@ public class ImageLoader {
 		    img[SpriteName.HIGHLIGHT.ordinal()] = 
 		    		toBufferedImage(ImageIO.read(new File(images_folder + "select.png")));
 		} catch (IOException e) {
+			System.out.println("Problème d'ouverture des images.");
 		}
 	}
 	
