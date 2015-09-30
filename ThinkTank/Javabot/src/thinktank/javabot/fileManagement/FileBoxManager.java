@@ -39,6 +39,8 @@ public class FileBoxManager extends JPanel {
 	
 	
 	public void loadFiles() {
+		FileExplorer.checkFor(directoryPath);
+		
 		List<File> filesInFolder = FileExplorer.getListFile(directoryPath);
 		
 		this.removeAll();

@@ -12,6 +12,7 @@ import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class FileExplorer {
@@ -19,9 +20,21 @@ public class FileExplorer {
 	static String fileName = "script3.py";
 	static String fileExtension = ".py";
 	
+	public static void checkFor(String directoryPath) {
+		File dir = new File(directoryPath);
+		
+		if(!dir.exists())
+			createDirectory(dir);
+	}
+	
+	public static void createDirectory(File directory)
+	{
+		directory.mkdir();
+	}
+	
 	public static List<File> getListFile(String directoryPath)
 	{
-		List<File> files = null;
+		List<File> files = new LinkedList<File>();
 		
 		File dir = new File(directoryPath);
 	    File[] filesInFolder = dir.listFiles(new FilenameFilter() {

@@ -10,6 +10,8 @@ import javax.imageio.ImageIO;
 
 public class ImageLoader {
 	
+	public static final String images_folder = "ressources/images/";
+	
 	BufferedImage img[] = new BufferedImage[8];
 	
 	public enum SpriteName{
@@ -26,21 +28,21 @@ public class ImageLoader {
 	public ImageLoader(){
 		try {
 		    img[SpriteName.MUR.ordinal()] = 
-		    		toBufferedImage(ImageIO.read(new File("ressources/images/mur.png")));
+		    		toBufferedImage(ImageIO.read(new File(images_folder + "mur.png")));
 		    img[SpriteName.MISSILE.ordinal()] =
-		    		toBufferedImage(ImageIO.read(new File("ressources/images/missile.png")));
+		    		toBufferedImage(ImageIO.read(new File(images_folder + "missile.png")));
 		    img[SpriteName.SOL.ordinal()] =
-		    		toBufferedImage(ImageIO.read(new File("ressources/images/sol.png")));
+		    		toBufferedImage(ImageIO.read(new File(images_folder + "sol.png")));
 		    img[SpriteName.TANKH.ordinal()] = 
-		    		toBufferedImage(ImageIO.read(new File("ressources/images/tankH.png")));
+		    		toBufferedImage(ImageIO.read(new File(images_folder + "tankH.png")));
 		    img[SpriteName.TANKB.ordinal()] = 
-		    		toBufferedImage(ImageIO.read(new File("ressources/images/tankB.png")));
+		    		toBufferedImage(ImageIO.read(new File(images_folder + "tankB.png")));
 		    img[SpriteName.TANKD.ordinal()] = 
-		    		toBufferedImage(ImageIO.read(new File("ressources/images/tankD.png")));
+		    		toBufferedImage(ImageIO.read(new File(images_folder + "tankD.png")));
 		    img[SpriteName.TANKG.ordinal()] = 
-		    		toBufferedImage(ImageIO.read(new File("ressources/images/tankG.png")));
+		    		toBufferedImage(ImageIO.read(new File(images_folder + "tankG.png")));
 		    img[SpriteName.HIGHLIGHT.ordinal()] = 
-		    		toBufferedImage(ImageIO.read(new File("ressources/images/select.png")));
+		    		toBufferedImage(ImageIO.read(new File(images_folder + "select.png")));
 		} catch (IOException e) {
 		}
 	}
