@@ -7,13 +7,9 @@ import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.NoninvertibleTransformException;
 import java.awt.geom.Point2D;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,7 +23,6 @@ import thinktank.javabot.physics.ObjetTT;
 import thinktank.javabot.physics.Physique;
 import thinktank.javabot.physics.SmartCursor;
 import thinktank.javabot.physics.Tank;
-import thinktank.javabot.physics.Terrain;
 
 public class GraphicArena extends JComponent{
 
@@ -43,7 +38,7 @@ public class GraphicArena extends JComponent{
 	private SmartCursor cursor;
 	public final static int tailleCase = 32;
 	public final static ImageLoader imgLoader = new ImageLoader();
-	private AffineTransform transform;
+	@SuppressWarnings("unused")
 	private MainPanel panel;
 	private SimulationThread thread;
 	
@@ -181,6 +176,7 @@ public class GraphicArena extends JComponent{
 	
 	class SimulationLauncher implements ActionListener {
 
+		@SuppressWarnings("deprecation")
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
@@ -396,12 +392,12 @@ public class GraphicArena extends JComponent{
 		if(diffY > diffX){
 			g2.translate(0, Math.max(hauteurAffichage*diffX - this.getHeight(), this.getHeight() - hauteurAffichage*diffX) / 2);
 			g2.scale(diffX, diffX);
-			transform = (AffineTransform) g2.getTransform();
+			//transform = (AffineTransform) g2.getTransform();
 		}
 		else{
 			g2.translate(Math.max(largeurAffichage*diffY-this.getWidth(), this.getWidth()-largeurAffichage*diffY)/2, 0);
 			g2.scale(diffY, diffY);
-			transform = (AffineTransform) g2.getTransform();
+			//transform = (AffineTransform) g2.getTransform();
 		}
 	}
 	

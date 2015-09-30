@@ -1,19 +1,10 @@
 package demaciatanks.swinginterface;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
-import java.awt.geom.AffineTransform;
-
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
 import demaciatanks.scripteditor.ScriptEditor;
 import thinktank.javabot.graphics.ImageLoader;
-import thinktank.javabot.physics.SmartCursor;
-
 import thinktank.javabot.physics.SmartCursor;
 
 public class MainPanel extends JPanel {
