@@ -35,7 +35,12 @@ public class ScriptEditor extends RSyntaxTextArea {
 		public void mouseClicked(MouseEvent arg0) {}
 
 		@Override
-		public void mouseEntered(MouseEvent arg0) {}
+		public void mouseEntered(MouseEvent arg0) {
+			if( ! cursor.isActive() ) return;
+			
+			openFile( cursor.getTank().getScript_path() );
+			cursor.desactivate();
+		}
 
 		@Override
 		public void mouseExited(MouseEvent arg0) {}
@@ -50,12 +55,7 @@ public class ScriptEditor extends RSyntaxTextArea {
 		public void mouseDragged(MouseEvent arg0) {}
 
 		@Override
-		public void mouseMoved(MouseEvent arg0) {
-			if( ! cursor.isActive() ) return;
-			
-			openFile( cursor.getTank().getScript_path() );
-			cursor.desactivate();
-		}
+		public void mouseMoved(MouseEvent arg0) {}
 		
 	}
 	
@@ -67,6 +67,9 @@ public class ScriptEditor extends RSyntaxTextArea {
 		editing_file = file;
 		String content = FileExplorer.readFile(editing_file.getPath());
 		setText(content);
+		
+		validate();
+		repaint();
 	}
 	
 	public File getFile() {
